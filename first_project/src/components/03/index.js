@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
+// import Navbar from './Navbar';
+import Heading from './Heading';
+import './index.css';
+import Image from './Image';
+import Body from './Body'
 
 export default class Third extends Component {
-    constructor() {
-        super();
-        this.state = {
-            children: [
-                {name: 'one', age:'two'},
-                {name: 'a', age: 'three'}]
-        }
-    }
-    
     render() {
         return (
             <div>
-                {this.state.children.map((child, index) => {
-						return (
-                            <p key={index}>{child.name}</p>
-                        );
-					})}
+                <div className="top">
+                    {/* <Navbar /> */}
+                    <Heading />
+                    <Image />
+                </div>
+                <Body />
             </div>
         );
     }
