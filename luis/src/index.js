@@ -32,20 +32,39 @@ function Root(props) {
             <h1>Hello {props.name} and {props.cohort}</h1>
             {posts.map((post) => {
                 return (
-                    <ListItem key={post.id} title={post.title} body={post.body} />
+                    <Post key={post.id} title={post.title} body={post.body} />
                 )
             })}
         </div>
     );
+    
 }
 
 function ListItem(props) {
-    return (
-        <div className="list-item">
-            <h1>{props.title}</h1>
-            <div>{props.body}</div>
-        </div>
-    )
+    
+}
+
+class Post extends React.Component {
+    state = {
+        showBody: false,
+    }
+
+    render() {
+        return (
+            <div className="list-item">
+                <h1>{this.props.title}</h1>
+                <button onClick={this.toggleBody}>Show Body</button>
+                {this.state.showBody === true ? <div>{this.props.body}</div> : null}
+            </div>
+        )
+    }
+
+    toggleBody = () => {
+        this.setState(prevState => { 
+            return { showBody: !prevState.showBody };
+        });
+    };
+
 }
 
 ReactDOM.render(<Root name="patrick" cohort="cs5" />, document.getElementById('root'));
