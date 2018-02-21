@@ -30,15 +30,19 @@ class App extends Component {
         <h1 className="Header">React Wars</h1>
         {this.state.starwarsChars.map((character, index) => {
          return (
-              <Card 
-              character={character.name} 
-              birthYear={character.birth_year}
-              height={character.height}
-              sex={character.sex}
-              eyeColor={character.eye_color}
-              hairColor={character.hair_color}
-              mass={character.mass}
-              />
+               <div className="character-info" key={index}>
+                <Card 
+                // character={character.name} 
+                // birthYear={character.birth_year}
+                // height={character.height}
+                // sex={character.sex}
+                // eyeColor={character.eye_color}
+                // hairColor={character.hair_color}
+                // mass={character.mass}
+                // instead of all of this can do following:
+                {...character}
+                />
+              </div>
          )
         })}
       </div>
