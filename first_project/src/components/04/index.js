@@ -33,14 +33,14 @@ export default class Fourth extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className="title">
                     <h1>User Comments</h1>
                 </div>
                 <div>
                     {this.state.comments.map((user, index) => {
                             return ([
-                            <div key={index} className="username">User: {user.username}</div>,
-                            <div key={index} className="text">Text: {user.text}</div>
+                            <div key={index} className="username"><b>Username</b>: {user.username}</div>,
+                            <div key={index} className="text"><b>Text</b>: {user.text}</div>
                             ]);
                         })}
                 </div>
